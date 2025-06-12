@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Reis - Personal Trainer | Salinas-MG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5538999350700" target="_blank" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition-colors z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-90 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="font-bold text-xl text-blue-500">Alan Reis</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="text-white hover:text-blue-400 px-3 py-2 font-medium">Início</a>
+                            <a href="#about" class="text-white hover:text-blue-400 px-3 py-2 font-medium">Sobre</a>
+                            <a href="#services" class="text-white hover:text-blue-400 px-3 py-2 font-medium">Serviços</a>
+                            <a href="#testimonials" class="text-white hover:text-blue-400 px-3 py-2 font-medium">Depoimentos</a>
+                            <a href="#contact" class="text-white hover:text-blue-400 px-3 py-2 font-medium">Contato</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5538999350700" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-bold transition-colors">
+                        Quero Treinar Agora
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-button" class="text-white hover:text-blue-400 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-900">
+                <a href="#home" class="text-white hover:text-blue-400 block px-3 py-2">Início</a>
+                <a href="#about" class="text-white hover:text-blue-400 block px-3 py-2">Sobre</a>
+                <a href="#services" class="text-white hover:text-blue-400 block px-3 py-2">Serviços</a>
+                <a href="#testimonials" class="text-white hover:text-blue-400 block px-3 py-2">Depoimentos</a>
+                <a href="#contact" class="text-white hover:text-blue-400 block px-3 py-2">Contato</a>
+                <a href="https://wa.me/5538999350700" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md font-bold text-center">
+                    Quero Treinar Agora
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+        <div class="max-w-4xl text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Alan Reis <span class="text-blue-400">Personal Trainer</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10">
+                "Supere seus limites, acredite em si mesmo e conquiste resultados extraordinários. Estou aqui para te guiar nessa jornada de transformação. Vamos treinar juntos e fazer acontecer!"
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors">
+                    Contato
+                </a>
+                <a href="#services" class="bg-transparent hover:bg-white hover:text-gray-900 text-white font-bold py-4 px-8 border-2 border-white rounded-full text-lg transition-colors">
+                    Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Sobre o Alan</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <div class="border-4 border-blue-500 rounded-full overflow-hidden w-64 h-64 md:w-80 md:h-80">
+                        <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=725&q=80" alt="Alan Reis Personal Trainer" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Transformando vidas através do treinamento físico</h3>
+                    <p class="text-gray-600 mb-6">
+                        Com atuação em Salinas-MG e presença em todas as academias filiadas da cidade, ofereço treinamentos personalizados com abordagem individualizada para cada aluno.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Acredito que a combinação de <span class="font-bold text-blue-600">motivação</span>, <span class="font-bold text-blue-600">constância</span> e <span class="font-bold text-blue-600">disciplina</span> é o caminho para alcançar qualquer objetivo físico, seja ele emagrecimento, hipertrofia ou melhor qualidade de vida.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        Meu diferencial está em oferecer <span class="font-bold text-blue-600">treino de verdade</span>, adaptado às suas necessidades e limitações, com acompanhamento contínuo e suporte total durante sua jornada de transformação.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/5538999350700" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition-colors">
+                            Agendar Aula
+                        </a>
+                        <a href="#services" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-md transition-colors">
+                            Ver Serviços
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Serviços Oferecidos</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Programas personalizados para te ajudar a alcançar seus objetivos de forma saudável e sustentável</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="p-6 text-center">
+                        <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-dumbbell text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Treino Personalizado</h3>
+                        <p class="text-gray-600">
+                            Programas específicos para hipertrofia, emagrecimento ou saúde, elaborados conforme suas necessidades e objetivos.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="p-6 text-center">
+                        <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-clipboard-list text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Avaliação Física</h3>
+                        <p class="text-gray-600">
+                            Fichas individuais com avaliação física periódica para acompanhar sua evolução e ajustar o treinamento.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="p-6 text-center">
+                        <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-headset text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Suporte Contínuo</h3>
+                        <p class="text-gray-600">
+                            Suporte via WhatsApp para tirar dúvidas, ajustar treinos e dar orientações nutricionais básicas.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="p-6 text-center">
+                        <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-users text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Atendimento Universal</h3>
+                        <p class="text-gray-600">
+                            Treinos adaptados para homens e mulheres de todas as idades, respeitando individualidades e limitações.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/5538999350700" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full inline-block transition-colors">
+                    Quero Começar a Treinar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Depoimentos</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto">Veja o que meus alunos falam sobre os resultados dos treinos</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Depoimento" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Carlos Eduardo</h4>
+                            <p class="text-blue-300 text-sm">Emagrecimento</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 italic mb-4">
+                        "Perdi 12kg em 3 meses com o acompanhamento do Alan. Ele me motivou nos dias difíceis e manteve meu foco no objetivo. Super recomendo!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Depoimento" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Amanda Silva</h4>
+                            <p class="text-blue-300 text-sm">Hipertrofia</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 italic mb-4">
+                        "Depois de anos tentando sozinha, finalmente ganhei massa muscular de verdade! O Alan entende do que fala e o treino é perfeito pro meu biotipo."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Depoimento" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Ricardo Lopes</h4>
+                            <p class="text-blue-300 text-sm">Saúde</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 italic mb-4">
+                        "Com 52 anos, meu principal objetivo era qualidade de vida. O Alan soube adaptar os exercícios pra minha rotina. Melhorei minha disposição e abaixei a pressão!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Pronto para transformar seu corpo e sua saúde?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Comece hoje mesmo sua jornada de transformação com acompanhamento profissional e personalizado</p>
+            <a href="https://wa.me/5538999350700" target="_blank" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-4 px-8 rounded-full inline-block text-lg transition-colors">
+                <i class="fab fa-whatsapp mr-2"></i> Fale Comigo pelo WhatsApp
+            </a>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Contato</h2>
+                    <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                    
+                    <p class="text-gray-600 mb-8">
+                        Estou disponível para tirar suas dúvidas e ajudar você a dar o primeiro passo em direção aos seus objetivos. Me envie uma mensagem!
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Atendimento</h4>
+                                <p class="text-gray-600">Salinas-MG - Todas as academias filiadas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-whatsapp text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">WhatsApp</h4>
+                                <p class="text-gray-600">(38) 99935-0700</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fab fa-instagram text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Instagram</h4>
+                                <p class="text-gray-600">@alanreis1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Envie uma mensagem</h3>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Seu Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Seu WhatsApp ou Email</label>
+                                <input type="text" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Sua Mensagem</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            <button type="button" id="sendMessage" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full transition-colors">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Alan Reis</h3>
+                    <p class="text-gray-400">Personal Trainer especializado em emagrecimento, hipertrofia e treinamento personalizado.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Depoimentos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Redes Sociais</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/alanreis1" target="_blank" class="bg-gray-800 hover:bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5538999350700" target="_blank" class="bg-gray-800 hover:bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Alan Reis Personal Trainer. Todos os direitos reservados.</p>
+                <p class="mt-2">Salinas - Minas Gerais</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Form submission
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if(name && email && message) {
+                // In a real implementation, you would send this data to a server
+                const whatsappUrl = `https://wa.me/5538999350700?text=Olá Alan, meu nome é ${encodeURIComponent(name)}. ${encodeURIComponent(message)}. Meu contato é ${encodeURIComponent(email)}`;
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Show success message
+                alert('Mensagem enviada com sucesso! Vamos entrar em contato em breve.');
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
